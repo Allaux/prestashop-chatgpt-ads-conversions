@@ -29,6 +29,8 @@ Le pixel mesure les événements dans le navigateur. La Conversions API envoie l
 
 L'intégration prévoit les formats d'événements OpenAI Ads, les montants en unités monétaires mineures, les identifiants d'attribution lorsqu'ils sont disponibles et les erreurs de transmission. Un événement accepté par l'API doit ensuite être vérifié dans la configuration des conversions Ads Manager : acceptation technique et attribution publicitaire sont deux étapes distinctes.
 
+Cette mise en place relève d'une [intégration API e-commerce avec gestion de l'authentification et des erreurs](https://allaux.fr/services/integrations-api).
+
 ## Consentement, Google Consent Mode et Tarteaucitron
 
 Le suivi nécessite un accord explicite. L'intégration utilise les décisions Google Consent Mode et propose un service Tarteaucitron ainsi que des callbacks pour d'autres gestionnaires de consentement (CMP). Le module bloque les événements avant l'accord et prend en charge le retrait du consentement. La configuration CMP et le thème doivent être vérifiés sur chaque boutique.
@@ -38,6 +40,8 @@ Le suivi nécessite un accord explicite. L'intégration utilise les décisions G
 L'intervention comprend le déploiement du module, la configuration du Pixel ID et de la clé Conversions API, la sélection des événements, la connexion au gestionnaire de consentement et les tests en mode validation. Les formulaires de devis ou modules spécifiques peuvent nécessiter une adaptation pour déclencher la conversion après un envoi réussi.
 
 Pour une boutique existante, l'installation vérifie aussi les pixels déjà présents, les risques de doublons, les caches PrestaShop et la planification des relances.
+
+Le suivi doit cohabiter avec le thème et les autres modules sans dégrader le parcours d'achat. Les adaptations peuvent s'inscrire dans une prestation de [développement e-commerce sur mesure](https://allaux.fr/services/developpement-sur-mesure), puis de [maintenance technique PrestaShop](https://allaux.fr/services/maintenance). Les contrôles de chargement et de cache rejoignent les interventions de [performance web et SEO technique e-commerce](https://allaux.fr/services/performance-web).
 
 - [Développeur PrestaShop indépendant](https://allaux.fr/prestashop)
 - [Développement de modules PrestaShop sur mesure](https://allaux.fr/prestashop/module-sur-mesure)
