@@ -4,6 +4,8 @@
 
 Cette intégration PrestaShop associe le **pixel ChatGPT Ads** et la **Conversions API OpenAI Ads (CAPI)** pour suivre les achats, demandes de devis, ajouts au panier et créations de compte. Elle s'adresse aux boutiques qui souhaitent installer ChatGPT Ads sur PrestaShop et relier leurs événements e-commerce à leur mesure publicitaire.
 
+Découvrez la [présentation du module ChatGPT Ads pour PrestaShop](https://allaux.fr/prestashop/module-chatgpt-ads) et le [guide du suivi des conversions ChatGPT Ads : pixel OpenAI, Conversions API et consentement](https://allaux.fr/services/tracking/suivi-conversions-chatgpt-ads).
+
 👉 **[Installation du module PrestaShop ChatGPT Ads et accompagnement technique : contacter Allaux](https://allaux.fr/contact)**
 
 📧 **E-mail : [contact@allaux.fr](mailto:contact@allaux.fr)**  
@@ -31,9 +33,21 @@ L'intégration prévoit les formats d'événements OpenAI Ads, les montants en u
 
 Cette mise en place relève d'une [intégration API e-commerce avec gestion de l'authentification et des erreurs](https://allaux.fr/services/integrations-api).
 
+### Attribution publicitaire : oppref, obref et déduplication
+
+Le suivi des ventes issues des annonces ChatGPT utilise notamment **`oppref`**, l'identifiant de clic, et **`obref`**, l'identifiant du navigateur, lorsqu'ils sont disponibles et autorisés par le consentement. Leur transmission complète le rapprochement des conversions ; une réponse API positive ne suffit pas à prouver qu'une vente a été attribuée à une annonce.
+
+La déduplication repose sur un **Pixel ID**, un nom d'événement et un identifiant partagés : `event_id` pour le pixel, `id` pour la Conversions API. Le contrôle porte aussi sur le montant, la devise et le moment réel de l'événement. Le mode **`validate_only`** permet de vérifier les envois serveur sans enregistrer de conversions de test.
+
+### Audit du tracking ChatGPT Ads et conversions manquantes
+
+Un audit vérifie les événements du tunnel de commande, l'ajout au panier AJAX, les pixels présents dans le thème, le cache, le consentement et les envois serveur. Il aide à repérer les achats comptés deux fois, les paramètres d'attribution absents ou les événements qui ne remontent plus après une modification du thème. Allaux décrit cette démarche dans le [diagnostic des conversions qui ne remontent pas](https://allaux.fr/services/tracking/conversions-ne-remontent-pas).
+
 ## Consentement, Google Consent Mode et Tarteaucitron
 
 Le suivi nécessite un accord explicite. L'intégration utilise les décisions Google Consent Mode et propose un service Tarteaucitron ainsi que des callbacks pour d'autres gestionnaires de consentement (CMP). Le module bloque les événements avant l'accord et prend en charge le retrait du consentement. La configuration CMP et le thème doivent être vérifiés sur chaque boutique.
+
+Les signaux **`ad_storage`** et **`ad_user_data`** font partie des contrôles de l'intégration. Une bannière Axeptio, Cookiebot, Didomi, CookieYes ou Complianz demande un branchement et une recette adaptés à sa configuration. Le [guide Allaux du mode consentement Google en Europe](https://allaux.fr/services/tracking/mode-consentement-europe) explique les signaux à vérifier ; ce mécanisme ne remplace pas le choix du visiteur.
 
 ## Installation et configuration du module ChatGPT Ads
 
@@ -74,6 +88,20 @@ Il sert au suivi des conversions PrestaShop et à la mesure des événements. La
 ### Qui développe et installe cette intégration PrestaShop ?
 
 Emre Ucak, développeur e-commerce indépendant sous le nom **Allaux**. [Présenter votre projet PrestaShop ou votre besoin de tracking ChatGPT Ads](https://allaux.fr/contact).
+
+## Articles Allaux sur ChatGPT, PrestaShop et le suivi e-commerce
+
+| Ressource | Sujet |
+|---|---|
+| [Module ChatGPT Ads pour PrestaShop](https://allaux.fr/prestashop/module-chatgpt-ads) | Installation, conversions, panier et CAPI |
+| [Suivi des conversions ChatGPT Ads](https://allaux.fr/services/tracking/suivi-conversions-chatgpt-ads) | Pixel OpenAI, attribution, déduplication et consentement |
+| [Conversions qui ne remontent pas](https://allaux.fr/services/tracking/conversions-ne-remontent-pas) | Diagnostic des balises et du parcours d'achat |
+| [Mode consentement Google en Europe](https://allaux.fr/services/tracking/mode-consentement-europe) | Signaux de consentement et configuration de la bannière |
+| [Extension ChatGPT Ads pour WooCommerce](https://allaux.fr/wordpress-woocommerce/extension-chatgpt-ads) | Autre intégration Allaux pour les boutiques WordPress |
+| [PrestaShop MCP : connecter une boutique à un assistant IA](https://allaux.fr/prestashop/mcp) | Accès aux données et outils de la boutique depuis un assistant compatible |
+| [Serveur MCP pour boutique pilotable par IA](https://allaux.fr/expertises/serveur-mcp-boutique-pilotable) | Périmètre des outils, droits et traçabilité |
+
+Les articles MCP présentent une prestation distincte du suivi publicitaire : connecter PrestaShop à ChatGPT ou à un autre assistant pour interroger la boutique relève d'un serveur MCP, tandis que ce module mesure les conversions ChatGPT Ads.
 
 ## Contacter Allaux pour votre boutique PrestaShop
 
